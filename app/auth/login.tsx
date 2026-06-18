@@ -10,7 +10,7 @@ import {
   Keyboard,
   ScrollView,
 } from "react-native";
-import { Link, Stack } from "expo-router";
+import { Link, Stack, router } from "expo-router";
 import { Feather, FontAwesome } from "@expo/vector-icons";
 
 export default function LoginScreen() {
@@ -27,7 +27,8 @@ export default function LoginScreen() {
       alert("Por favor, completa todos los campos.");
       return;
     }
-    alert(`Iniciando sesión con: ${email}`);
+    // TODO: Connect to real backend
+    router.replace("/home");
   };
 
   const handleSocialLogin = (platform: "Google" | "GitHub") => {
